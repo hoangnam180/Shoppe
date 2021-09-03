@@ -170,7 +170,14 @@ html{
     top: -6px;
     right: 0px;
 }
-
+.select__input-items .select__input-items-link i{
+    display: none;
+}
+.select__input-items--active .select__input-items-link i{
+    display: inline-block;
+    color: var(--primary-color);
+    font-size: 1.2rem; 
+}
 .select__input-items-link{
     text-decoration: none;
     color: var(--text-color);
