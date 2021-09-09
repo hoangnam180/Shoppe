@@ -9,6 +9,7 @@
     --navbar-height:34px;
     --header-height:120px;
     --header-with-search-height: calc(var(--header-height) - var(--navbar-height));
+    --header-sort-bar-height:46px;
 }
 *{
     box-sizing: inherit;
@@ -25,15 +26,6 @@ html{
     margin-top: 10px;
 }
 /* Responsive */
-.grid {
-    width: 1200px;
-    max-width: 100%;
-    margin: 0 auto;
-}
-
-.grid__full-width{
-    width: 100%;
-}
 .grid__row{
     display: flex;
     flex-wrap:wrap ;
@@ -217,14 +209,4 @@ html{
     text-align: center;
     line-height: var(--height);
     font-weight: 300;
-}
-.pagination-items__icon{
-
-}
-
-.pagination-items__icon.fas.fa-angle-left{
-
-}
-.pagination-items__icon.fas.fa-angle-right{
-
 }

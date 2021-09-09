@@ -1,8 +1,58 @@
+.app{
+    overflow: hidden;
+    margin: 0 4px;
+}
 .header{
     height: var(--header-height);
     background-image: linear-gradient(180deg,#F63A29,#FE562E);   
 }
-
+.header__sort-bar{
+    position: fixed;
+    top: var(--header-height);
+    right: 0;
+    left: 0;
+    height: var(--header-sort-bar-height);
+    display: flex;
+    background-color: var(--while-color);
+    list-style: none;
+    margin-top: 0;
+    padding-left: 0;
+    border-top: 1px solid #e5e5e5 ;
+    border-bottom: 1px solid #e5e5e5 ;
+    display: none;
+}
+.header__sort-item{
+    flex:1;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+}
+.header__sort-link{
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: 1.4rem;
+    display: block;
+    height: 100%;
+    line-height: var(--header-sort-bar-height);
+    text-align: center;
+    position: relative;
+}
+.header__sort-link::before{
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    height: 60%;
+    border-left:1px solid #ccc;
+    transform: translateY(-50% );
+}
+.header__sort-item:first-child .header__sort-link::before{
+    display: none;
+}
+.header__sort-link--active .header__sort-link{
+    color: var(--primary-color);
+}
 /* navbar */
 .navbar{
     display: flex;
@@ -473,10 +523,24 @@
     align-items: center; 
     margin: 0 8px;
 }
+.header__mobile-search{
+    padding: 10px 10px;
+    display: none;
+}
+
+.header__mobile-search-icon{
+    font-size: 2.3rem;
+    color: var(--while-color);
+}
 .header__logo{
     width: 150px;
     padding-right: 40px;
     cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+}
+.header__logo a{
+    display: block;
+    line-height: 0;
 }
 
 
@@ -508,6 +572,7 @@
     padding-left: 16px;
     position: relative;
     cursor: pointer;
+    z-index: 1;
 }
 .header__search-select-laber{
     font-size: 1.4rem;
@@ -550,6 +615,7 @@
     position: relative;
     padding: 10px 10px;
     cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
 }
 .header__cart-wrap:hover .header__cart-list{
     display: block;
@@ -636,7 +702,7 @@
 .header__cart-list-items{
     padding-left: 0;
     list-style: none;
-    height:30vh;
+    max-height:50vh;
     overflow-y:  auto;
 }
 .header__cart-items{
@@ -973,12 +1039,57 @@
 .home-filter__page-icon{
     margin: auto;
 }
+/* navbar-category-mobile */
+.navigation__mobile{
+    display: none;
+
+}
+.mobile-list{
+    display: flex;
+    list-style: none;
+    padding-left: 0;
+    max-width: 100%;
+    overflow-x: auto ;
+}
+.mobile-list::-webkit-scrollbar{
+    display: none;
+}
+.mobile-category-item{
+    flex-shrink: 0;
+    margin: 10px;
+
+}
+.mobile-category-item:nth-last-of-type(3n + 3) .mobile-category-link{
+    background-color:#7EA6D3 ;
+}
+.mobile-category-item:nth-last-of-type(3n + 1) .mobile-category-link{
+    background-color:#6BC2B6 ;
+}
+.mobile-category-item:nth-last-of-type(3n + 2) .mobile-category-link{
+    background-color:#7BC876 ;
+}
+.mobile-category-link{
+    --line-height:2rem;
+    text-decoration: none;
+    color:var(--while-color);
+    font-size: 1.4rem;
+    line-height: var(--line-height);
+    display: block;
+    text-align: center;
+    width:108px;
+    height:calc(var(--line-height) * 2 );
+    border-radius: 4px;
+    font-weight: 300;
+    padding: 0 12px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    user-select: none;
+    -webkit-user-select:none ;
+}
 .home-product{
     margin-bottom: 10px;
-}
-.wrapper-row{
-    margin-top: 10px;
-
 }
 .home-product-items{
     display: block;
@@ -990,6 +1101,7 @@
     transition: transform ease-in 0.1s;
     will-change: transform;
     cursor: pointer;
+    margin-top: 10px;
 }
 .home-product-items:hover{
     transform:translateY(-1px);
@@ -1109,9 +1221,7 @@ i.home-product-items__like--liked-fill{
 .home-product-items__favorite span{
     color: var(--while-color);
 }
-.fa-check{
 
-}
 .home-product-items__sale-off{
     position: absolute;
     right: 0;
@@ -1152,6 +1262,7 @@ i.home-product-items__like--liked-fill{
 .home-product__pagination-list{
     margin-top: 48px;
     margin-bottom:32px ;
+    padding-left: 0;
 }
 .foorter{
     background-color: var(--while-color);
@@ -1169,9 +1280,6 @@ i.home-product-items__like--liked-fill{
 .foorter__list{
     list-style: none;
     padding-left:0 ;
-
-}
-.foorter__list-items{
 
 }
 .foorter__list-items-link:hover:hover{
