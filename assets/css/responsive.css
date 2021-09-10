@@ -112,16 +112,36 @@
     .foorter__heading {
         text-align: center;
     }
-    .foorter__list-items-link{
-        text-align: center;
-    }
     .footer__donwload{
         justify-content: center;
     }
     .foorter__download-app-link{
         padding: 4px 12px;
     }
-}
+    .wrapper__foorter-mobile{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .foorter__heading{
+        flex: 1;
+    }
+    .foorter__list{
+        margin-top: auto;
+        flex-shrink: 0;
+    }
+    .foorter__list-items{
+     
+    }
+    .foorter__list-items-link{
+        display: flex;
+        justify-content: flex-start;
+    }
+    .foorter__list-items-link span{
+           margin-right: auto;
+           flex-shrink: 0;
+    }
 @keyframes slide{
     0%{
         opacity: 0;
@@ -135,4 +155,5 @@
         top: var(--header-height);
     }
     
+}
 }
