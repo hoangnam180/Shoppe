@@ -1,9 +1,6 @@
 /* mobile table */
 @media only screen and (max-width : 1023px){
-    :root{
-        --navbar-height:0px;
-        --header-height:70px;
-    }
+ 
     .header{
         position: fixed;
         right: 0;
@@ -43,12 +40,13 @@
         display: block;
     
     }
-    .header__cart:focus{
-        display: block;
-    }
 }
 /* tablet */
 @media only screen and (min-width : 740px ) and (max-width : 1023px){
+    :root{
+        --navbar-height:0px;
+        --header-height:70px;
+    }
     .hide-on-tablet{
         display: none;
     }
@@ -56,6 +54,10 @@
 
 /* mobile */
 @media only screen and (max-width: 739px){
+    :root{
+        --navbar-height:0px;
+        --header-height:54px;
+    }
     .hide-on-mobile{
         display: none;
     }
@@ -104,6 +106,21 @@
     .header__logo {
         width: 110px;
     }
+    .foorter__content{
+        padding: 0 20px;
+    }
+    .foorter__heading {
+        text-align: center;
+    }
+    .foorter__list-items-link{
+        text-align: center;
+    }
+    .footer__donwload{
+        justify-content: center;
+    }
+    .foorter__download-app-link{
+        padding: 4px 12px;
+    }
 }
 @keyframes slide{
     0%{
@@ -117,4 +134,5 @@
         opacity: 1;
         top: var(--header-height);
     }
+    
 }
